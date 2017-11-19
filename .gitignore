@@ -25,3 +25,4 @@ src/main/DeliveryStrategy.java
 src/main/DiscountCart.java
 src/main/PaymentStrategy.java
 src/main/PayPalStrategy.java
+!/.gitignore
