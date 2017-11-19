@@ -18,3 +18,10 @@ buildNumber.properties
 src/main/resources/
 target/generated-sources/
 target/generated-test-sources/
+
+src/main/Cart.java
+src/main/CashStrategy.java
+src/main/DeliveryStrategy.java
+src/main/DiscountCart.java
+src/main/PaymentStrategy.java
+src/main/PayPalStrategy.java
