@@ -19,10 +19,10 @@ src/main/resources/
 target/generated-sources/
 target/generated-test-sources/
 
-src/main/Cart.java
-src/main/CashStrategy.java
-src/main/DeliveryStrategy.java
-src/main/DiscountCart.java
-src/main/PaymentStrategy.java
-src/main/PayPalStrategy.java
+src/main/java/store/Cart.java
+src/main/java/store/CashStrategy.java
+src/main/java/store/DeliveryStrategy.java
+src/main/java/store/DiscountCart.java
+src/main/java/store/PaymentStrategy.java
+src/main/java/store/PayPalStrategy.java
 !/.gitignore
