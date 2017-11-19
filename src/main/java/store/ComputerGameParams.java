@@ -16,13 +16,15 @@ public class ComputerGameParams {
     private float price;
     private int ageRestriction;
 
+//    public ComputerGameParams(ArrayList<GamesGenre> gameGenres, ArrayList<ComputerPlatforms.Platform> platforms, String gameTitle, HashMap<String, String> gameDescription, float gamePrice, int gameAgeRestriction) {
+//    }
 
 
     String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    void setTitle(String title) {
         this.title = title;
     }
 
@@ -30,7 +32,7 @@ public class ComputerGameParams {
         return description;
     }
 
-    public void setDescription(HashMap<String, String> description) {
+    void setDescription(HashMap<String, String> description) {
         this.description = description;
     }
 
@@ -38,7 +40,7 @@ public class ComputerGameParams {
         return price;
     }
 
-    public void setPrice(float price) {
+    void setPrice(float price) {
         this.price = price;
     }
 
@@ -46,16 +48,25 @@ public class ComputerGameParams {
         return ageRestriction;
     }
 
-    public void setAgeRestriction(int ageRestriction) {
+    void setAgeRestriction(int ageRestriction) {
         this.ageRestriction = ageRestriction;
     }
 
     private ArrayList<GamesGenre> getGenres() {
-        return new ArrayList<GamesGenre>(genres);
+        return genres;
+    }
+
+    public void setGenres(ArrayList<GamesGenre> genres) {
+        this.genres = genres;
+    }
+
+    public void setPlatforms(ArrayList<ComputerPlatforms.Platform> platforms) {
+        this.platforms = platforms;
     }
 
     private ArrayList<ComputerPlatforms.Platform> getPlatforms() {
-        return new ArrayList<ComputerPlatforms.Platform>(platforms);
+        return platforms;
+
     }
 
     ComputerGameParams(ArrayList<GamesGenre> genres, ArrayList<ComputerPlatforms.Platform> platforms, String title, HashMap<String, String> description, float price, int ageRestriction) {
@@ -70,18 +81,21 @@ public class ComputerGameParams {
 
 
     boolean matches(ComputerGameParams searchParams) {
+        if (searchParams.getGenres() == null){
+            return false;
+        }
         ArrayList<GamesGenre> geners = getGenres();
-        if ((geners != null) && (!geners.isEmpty()) && (!geners.containsAll(searchParams.getGenres()))) {
+        if ( geners == null || geners.isEmpty() || !geners.containsAll(searchParams.getGenres())) {
             return false;
         }
 
         ArrayList<ComputerPlatforms.Platform> platforms = getPlatforms();
-        if ((platforms != null) && (!platforms.isEmpty()) && (!platforms.containsAll(searchParams.getGenres()))) {
+        if (platforms.isEmpty() && !platforms.containsAll(searchParams.getGenres())) {
             return false;
         }
 
         String title = getTitle();
-        if ((title != null) && (!title.equals("")) && (!title.equals(searchParams.getTitle()))) {
+        if ((title == null) || (title.equals("")) || (!title.equals(searchParams.getTitle()))) {
             return false;
         }
 
