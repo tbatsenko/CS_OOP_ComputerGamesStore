@@ -18,7 +18,7 @@ public class ComputerGameParams {
 
 
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
@@ -34,7 +34,7 @@ public class ComputerGameParams {
         this.description = description;
     }
 
-    public float getPrice() {
+    private float getPrice() {
         return price;
     }
 
@@ -42,7 +42,7 @@ public class ComputerGameParams {
         this.price = price;
     }
 
-    public int getAgeRestriction() {
+    private int getAgeRestriction() {
         return ageRestriction;
     }
 
@@ -50,15 +50,15 @@ public class ComputerGameParams {
         this.ageRestriction = ageRestriction;
     }
 
-    public ArrayList<GamesGenre> getGenres() {
+    private ArrayList<GamesGenre> getGenres() {
         return new ArrayList<GamesGenre>(genres);
     }
 
-    public ArrayList<ComputerPlatforms.Platform> getPlatforms() {
+    private ArrayList<ComputerPlatforms.Platform> getPlatforms() {
         return new ArrayList<ComputerPlatforms.Platform>(platforms);
     }
 
-    public ComputerGameParams(ArrayList<GamesGenre> genres, ArrayList<ComputerPlatforms.Platform> platforms, String title, HashMap<String, String> description, float price, int ageRestriction) {
+    ComputerGameParams(ArrayList<GamesGenre> genres, ArrayList<ComputerPlatforms.Platform> platforms, String title, HashMap<String, String> description, float price, int ageRestriction) {
         this.genres = genres;
         this.platforms = platforms;
 
@@ -69,7 +69,7 @@ public class ComputerGameParams {
     }
 
 
-    public boolean matches(ComputerGameParams searchParams) {
+    boolean matches(ComputerGameParams searchParams) {
         ArrayList<GamesGenre> geners = getGenres();
         if ((geners != null) && (!geners.isEmpty()) && (!geners.containsAll(searchParams.getGenres()))) {
             return false;
@@ -91,9 +91,6 @@ public class ComputerGameParams {
         }
 
         int ageRestriction = getAgeRestriction();
-        if (ageRestriction > searchParams.getAgeRestriction()) {
-            return false;
-        }
-        return true;
+        return ageRestriction <= searchParams.getAgeRestriction();
     }
 }

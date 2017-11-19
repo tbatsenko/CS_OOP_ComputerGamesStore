@@ -10,7 +10,10 @@ import static org.junit.Assert.*;
 
 public class InventoryTest {
 
-    Inventory inventory = new Inventory();
+    private Inventory inventory;
+    {
+        inventory = new Inventory();
+    }
 
     @Before
     public void setup(){

@@ -1,10 +1,9 @@
 package store;
 
-import java.util.ArrayList;
-
 public class DiscountCart extends Cart{
-    public Cart cart;
+    private Cart cart;
     public DiscountCart(Cart cart){
+        super(cart.order);
         this.cart = cart;
 
     }

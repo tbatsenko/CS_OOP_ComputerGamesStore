@@ -6,17 +6,17 @@ public class ComputerGame {
 
     private final int id = idcounter++;
 
-    public ComputerGameParams params;
+    private ComputerGameParams params;
 
-    public ComputerGame(ComputerGameParams gameParams) {
+    ComputerGame(ComputerGameParams gameParams) {
         this.params = gameParams;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public ComputerGameParams getParams() {
+    ComputerGameParams getParams() {
         return params;
     }
 

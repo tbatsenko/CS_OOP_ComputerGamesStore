@@ -2,14 +2,14 @@ package store;
 
 import java.util.ArrayList;
 
-public class Inventory {
-    public ArrayList<ComputerGame> games;
+class Inventory {
+    ArrayList<ComputerGame> games;
 
-    public Inventory() {
-        games = new ArrayList<ComputerGame>();
+    Inventory() {
+        games = new ArrayList<>();
     }
 
-    public boolean addGame(ComputerGameParams gameParams){
+    boolean addGame(ComputerGameParams gameParams){
         if (gameParams == null) return false;
         if (gameParams.getTitle() == null) return false;
         ComputerGame newGame = new ComputerGame(gameParams);
@@ -17,20 +17,19 @@ public class Inventory {
         return true;
     }
 
-    public ComputerGame getGame(int id){
-        for (ComputerGame game : games) {
+    ComputerGame getGame(int id){
+        for (ComputerGame game : games)
             if (game.getId() == id) {
                 return game;
             }
-        }
         return null;
     }
 
 
 
-    public ArrayList<ComputerGame> search(ComputerGameParams searchParams){
+    ArrayList<ComputerGame> search(ComputerGameParams searchParams){
 
-        ArrayList<ComputerGame> result = new ArrayList<ComputerGame>();
+        ArrayList<ComputerGame> result = new ArrayList<>();
 
         for (ComputerGame game : games) {
             if (game.getParams().matches(searchParams)) {

@@ -5,7 +5,11 @@ import java.util.ArrayList;
 public class Cart {
     private PaymentStrategy ps;
     private DeliveryStrategy ds;
-    private ArrayList<ComputerGame> order;
+    ArrayList<ComputerGame> order;
+
+    Cart(ArrayList<ComputerGame> order) {
+        this.order = order;
+    }
 
     public void setPs(PaymentStrategy ps) {
         this.ps = ps;
@@ -24,7 +28,4 @@ public class Cart {
         }
 
     }
-
-
-
 }
