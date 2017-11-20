@@ -39,8 +39,8 @@ public class InventoryTest {
         gameGenres.add(GamesGenre.MOBA);
 
         // covers Test ComputerPlatforms and Platform
-        ArrayList<ComputerPlatforms.Platform> platfms = new ArrayList<>();
-        ComputerPlatforms.Platform platform = ComputerPlatforms.Platform.MACOS;
+        ArrayList<Platform> platfms = new ArrayList<>();
+        Platform platform = Platform.MACOS;
         platfms.add(platform);
 
         String gameTitle = "Super Game";
@@ -68,8 +68,8 @@ public class InventoryTest {
         ArrayList<GamesGenre> gameGenres = new ArrayList<>();
         gameGenres.add(GamesGenre.MOBA);
 
-        ArrayList<ComputerPlatforms.Platform> platfms = new ArrayList<>();
-        ComputerPlatforms.Platform platform = ComputerPlatforms.Platform.MACOS;
+        ArrayList<Platform> platfms = new ArrayList<>();
+        Platform platform = Platform.MACOS;
         platfms.add(platform);
 
         String gameTitle = "Super Game";
