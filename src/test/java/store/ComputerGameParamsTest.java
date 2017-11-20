@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
 public class ComputerGameParamsTest {
     private ComputerGameParams testParams;
@@ -32,10 +31,9 @@ public class ComputerGameParamsTest {
         gameGenres.add(GamesGenre.MOBA);
 
         // covers Test ComputerGameParams automatically
-        ArrayList<ComputerPlatforms.Platform> gamePlatforms = new ArrayList<>();
-        gamePlatforms.add(ComputerPlatforms.Platform.WINDOWS);
+        ArrayList<Platform> gamePlatforms = new ArrayList<>();
+        gamePlatforms.add(Platform.WINDOWS);
 
-        String gameTitle = "Super Game";
         HashMap<String, String> gameDescription = new HashMap<>();
         gameDescription.put("year", "2013");
         gameDescription.put("rating", "5/5");
@@ -60,8 +58,8 @@ public class ComputerGameParamsTest {
         gameGenres.add(GamesGenre.MOBA);
 
         // covers Test ComputerPlatforms and Platform
-        ArrayList<ComputerPlatforms.Platform> platfms = new ArrayList<>();
-        ComputerPlatforms.Platform platform = ComputerPlatforms.Platform.MACOS;
+        ArrayList<Platform> platfms = new ArrayList<>();
+        Platform platform = Platform.MACOS;
         platfms.add(platform);
 
         String gameTitle = "Super Game";
@@ -78,8 +76,6 @@ public class ComputerGameParamsTest {
         testParams.setGenres(gameGenres);
         testParams.setPlatforms(platfms);
 
-        // covers Test ComputerGame cause addGame calls creation of new ComputerGame
-//        ComputerGameParams searchParams = new ComputerGameParams(gameGenres, platfms, gameTitle, gameDescription, gamePrice,gameAgeRestriction);
         ComputerGameParams searchParams = new ComputerGameParams(gameGenres, platfms, gameTitle, gameDescription, gamePrice,gameAgeRestriction);
         assertTrue(testParams.matches(searchParams));
     }

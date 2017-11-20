@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class ComputerGameParams {
     private ArrayList<GamesGenre> genres;
-    private ArrayList<ComputerPlatforms.Platform> platforms;
+    private ArrayList<Platform> platforms;
 
 
     private String title;
@@ -36,7 +36,7 @@ public class ComputerGameParams {
         this.description = description;
     }
 
-    private float getPrice() {
+    float getPrice() {
         return price;
     }
 
@@ -60,16 +60,16 @@ public class ComputerGameParams {
         this.genres = genres;
     }
 
-    public void setPlatforms(ArrayList<ComputerPlatforms.Platform> platforms) {
+    public void setPlatforms(ArrayList<Platform> platforms) {
         this.platforms = platforms;
     }
 
-    private ArrayList<ComputerPlatforms.Platform> getPlatforms() {
+    private ArrayList<Platform> getPlatforms() {
         return platforms;
 
     }
 
-    ComputerGameParams(ArrayList<GamesGenre> genres, ArrayList<ComputerPlatforms.Platform> platforms, String title, HashMap<String, String> description, float price, int ageRestriction) {
+    ComputerGameParams(ArrayList<GamesGenre> genres, ArrayList<Platform> platforms, String title, HashMap<String, String> description, float price, int ageRestriction) {
         this.genres = genres;
         this.platforms = platforms;
 
@@ -89,7 +89,7 @@ public class ComputerGameParams {
             return false;
         }
 
-        ArrayList<ComputerPlatforms.Platform> platforms = getPlatforms();
+        ArrayList<Platform> platforms = getPlatforms();
         if (platforms.isEmpty() && !platforms.containsAll(searchParams.getGenres())) {
             return false;
         }
