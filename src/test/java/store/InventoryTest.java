@@ -17,7 +17,7 @@ public class InventoryTest {
 
     @Before
     public void setup(){
-        System.out.println("Running Test...");
+        System.out.println("Running Inventory Test...");
     }
 
     @Test
@@ -66,7 +66,7 @@ public class InventoryTest {
     @Test
     public void getGameWithExistingID() throws Exception {
         ArrayList<GamesGenre> gameGenres = new ArrayList<>();
-        gameGenres.add(GamesGenre.MOBA);
+        gameGenres.add(GamesGenre.ACTION);
 
         ArrayList<Platform> platfms = new ArrayList<>();
         Platform platform = Platform.MACOS;
@@ -87,8 +87,9 @@ public class InventoryTest {
 
 
         inventory.addGame(gameParams);
+        inventory.addGame(gameParams);
 
-        assertEquals(inventory.getGame(0),  inventory.games.get(0));
+        assertTrue(inventory.getGame(0) == inventory.games.get(1));
     }
 
     @Test

@@ -16,7 +16,7 @@ public class ComputerGameParamsTest {
 
     @Before
     public void setup(){
-        System.out.println("Running Test...");
+        System.out.println("Running Game Params Test...");
     }
 
     @Test
