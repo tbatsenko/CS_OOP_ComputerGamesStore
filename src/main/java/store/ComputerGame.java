@@ -18,9 +18,10 @@ public class ComputerGame {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass() || this.params.getTitle() == null) return false;
         ComputerGame that = (ComputerGame) o;
-        return id == that.id;
+        if (this == o) return true;
+
+        return false;
     }
 }

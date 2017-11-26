@@ -85,11 +85,11 @@ public class InventoryTest {
         ComputerGameParams gameParams = new ComputerGameParams(gameGenres, platfms, gameTitle,
                 gameDescription, gamePrice,gameAgeRestriction);
 
-
         inventory.addGame(gameParams);
         inventory.addGame(gameParams);
 
-        assertTrue(inventory.getGame(0) == inventory.games.get(1));
+
+        assertTrue(inventory.getGame(0) == inventory.games.get(0));
     }
 
     @Test
