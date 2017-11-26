@@ -2,7 +2,7 @@ package store;
 
 import java.util.ArrayList;
 
-public class Cart {
+public class Cart extends Observerable{
     PaymentStrategy ps;
     DeliveryStrategy ds;
     ArrayList<ComputerGame> order;
@@ -33,26 +33,28 @@ public class Cart {
         this.ds = ds;
     }
 
-    boolean addGame(ComputerGame game){
+    boolean addGame(ComputerGame game) {
         if (game == null || game.getParams().getTitle() == null) return false;
         order.add(game);
         return true;
     }
 
-    public double computeTotalPrice(){
+    public double computeTotalPrice() {
         float totalPrice = 0;
-        for (ComputerGame game: order) {
+        for (ComputerGame game : order) {
             totalPrice += game.getParams().getPrice();
         }
         return totalPrice;
     }
-    public boolean ship(){
+
+    public boolean ship() {
         if (ps.pay(computeTotalPrice())) {
             ds.deliver(order);
             this.setDelivered();
             return true;
         }
         return false;
-
     }
 }
+
+
